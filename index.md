@@ -19,7 +19,7 @@ Our approach employs a multi-step speech-text inference scheme that leverages ch
 We also propose a generalized speech-text pretraining scheme that helps with capturing cross-modal semantics.
 Automatic and human evaluations show that the proposed approach is effective in generating natural-sounding spoken responses, outperforming both prior and cascaded baselines.
 Detailed comparative studies reveal that, despite the cascaded approach being stronger in individual components, the joint speech-text modeling improves robustness against recognition errors and improves speech quality. 
-Demo is available at https://usdm.github.io.
+Demo is available at https://unifiedsdm.github.io.
 
 
 ## Model Comparison (DailyTalk)
