@@ -1,5 +1,17 @@
 # Unified Speech-Text Pretraining for Spoken Dialog Modeling
 
+### Authors
+- Heeseung Kim <a href="gmltmd789@snu.ac.kr">gmltmd789@snu.ac.kr</a>
+- Soonshin Seo <a href="sunshin.seo@navercorp.com">sunshin.seo@navercorp.com</a>
+- Kyeongseok Jeong <a href="ks.jeong@navercorp.com">ks.jeong@navercorp.com</a>
+- Ohsung Kwon <a href="osung.kwon@navercorp.com">osung.kwon@navercorp.com</a>
+- Jungwhan Kim <a href="jungwhan.kim@navercorp.com">jungwhan.kim@navercorp.com</a>
+- Jaehong Lee <a href="jaehong.l@navercorp.com">jaehong.l@navercorp.com</a>
+- Eunwoo Song <a href="eunwoo.song@navercorp.com">eunwoo.song@navercorp.com</a>
+- Myungwoo Oh <a href="myungwoo.oh@navercorp.com">myungwoo.oh@navercorp.com</a>
+- Sungroh Yoon (Corresponding author) <a href="sryoon@snu.ac.kr">sryoon@snu.ac.kr</a>
+- Kang Min Yoo (Corresponding author) <a href="kangmin.yoo@navercorp.com">kangmin.yoo@navercorp.com</a>
+
 ## Abstract
 While recent work shows promising results in expanding the capabilities of large language models (LLM) to directly understand and synthesize speech, an LLM-based strategy for modeling spoken dialogs remains elusive and calls for further investigation.
 This work proposes an extensive speech-text LLM framework, named the Unified Spoken Dialog Model (USDM), to generate coherent spoken responses with organic prosodic features relevant to the given input speech without relying on automatic speech recognition (ASR) or text-to-speech (TTS) solutions.
@@ -7,7 +19,7 @@ Our approach employs a multi-step speech-text inference scheme that leverages ch
 We also propose a generalized speech-text pretraining scheme that helps with capturing cross-modal semantics.
 Automatic and human evaluations show that the proposed approach is effective in generating natural-sounding spoken responses, outperforming both prior and cascaded baselines.
 Detailed comparative studies reveal that, despite the cascaded approach being stronger in individual components, the joint speech-text modeling improves robustness against recognition errors and improves speech quality. 
-Demo is available at https://anonymoususdm.github.io.
+Demo is available at https://usdm.github.io.
 
 
 ## Model Comparison (DailyTalk)
