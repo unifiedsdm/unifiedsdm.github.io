@@ -318,7 +318,7 @@ Input User Audio
   <source src="wavs/Expresso_model_generated/2_user.wav" type="audio/wav">
 </audio>
 
-User (Ground Truth): It's a very good way to put it. Yeah. He was he was part of the family. No other there's no other cat like like him. I don't. don't. Really imagine who's ever. been replacing him.<br>
+User (Ground Truth): Oh my gosh. Could he? Tell me about it. Remember when you used to make cookies and he would intentionally bat it around with his paws? He'd he'd get in the dough, and we'd have to throw everything out again.<br>
 
 **Generated Spoken Response**
 
@@ -333,7 +333,7 @@ Input User Audio
   <source src="wavs/Expresso_model_generated/3_user.wav" type="audio/wav">
 </audio>
 
-User (Ground Truth): It's a very good way to put it. Yeah. He was he was part of the family. No other there's no other cat like like him. I don't. don't. Really imagine who's ever. been replacing him.<br>
+User (Ground Truth): Teacher, is my neck supposed to hurt?<br>
 
 **Generated Spoken Response**
 
