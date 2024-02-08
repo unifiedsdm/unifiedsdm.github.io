@@ -333,7 +333,7 @@ Input User Audio
   <source src="wavs/Expresso_model_generated/3_user.wav" type="audio/wav">
 </audio>
 
-User (Ground Truth): Teacher, is my neck supposed to hurt?<br>
+User (Ground Truth): Does anybody want to hear about this? This is not a good thing to tell people about.<br>
 
 **Generated Spoken Response**
 
