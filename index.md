@@ -34,7 +34,7 @@ Input User Audio
   <source src="wavs/DailyTalk_model_generated/1_user.wav" type="audio/wav">
 </audio>
 
-User: Not everyone. But a lot of people do, especially the young. It's a fine place to spend an evening with friends or to make some new friends.
+User (Ground Truth): Not everyone. But a lot of people do, especially the young. It's a fine place to spend an evening with friends or to make some new friends.
 
 <table>
 	<thead>
@@ -64,7 +64,7 @@ Input User Audio
   <source src="wavs/DailyTalk_model_generated/2_user.wav" type="audio/wav">
 </audio>
 
-User: I’m very well, Thank you. And you?
+User (Ground Truth): I’m very well, Thank you. And you?
 
 <table>
 	<thead>
@@ -94,7 +94,7 @@ Input User Audio
   <source src="wavs/DailyTalk_model_generated/3_user.wav" type="audio/wav">
 </audio>
 
-User: Yes, do you like it?
+User (Ground Truth): Yes, do you like it?
 
 <table>
 	<thead>
@@ -125,7 +125,7 @@ Input User Audio
   <source src="wavs/DailyTalk_ground_truth_text/1_user.wav" type="audio/wav">
 </audio>
 
-User: Linda? Is that you? I haven't seen you in ages!
+User (Ground Truth): Linda? Is that you? I haven't seen you in ages!
 
 Text to generate: **Hi George! It's good to see you!**
 
@@ -157,7 +157,7 @@ Input User Audio
 <audio controls>
   <source src="wavs/DailyTalk_ground_truth_text/2_user.wav" type="audio/wav">
 </audio>
-User: We are all very proud of you.
+User (Ground Truth): We are all very proud of you.
 
 Text to generate: **I am very happy, too. It was a big game and I won.**
 
@@ -189,7 +189,7 @@ Input User Audio
 <audio controls>
   <source src="wavs/DailyTalk_ground_truth_text/3_user.wav" type="audio/wav">
 </audio>
-User: Ah, that's all part of the fun. What do you think of these shorts?
+User (Ground Truth): Ah, that's all part of the fun. What do you think of these shorts?
 
 Text to generate: **They look really good on you. They look comfortable too.**
 
@@ -287,6 +287,54 @@ A: Okay. Are you mo- are you moving there for a job?<br>
   <source src="wavs/Fisher_model_generated/4_usdm.wav" type="audio/wav">
 </audio>
 <br><br>
+
+## (Bonus) Single-Turn Scenarios with Expressive Dataset (Expresso)
+ **Since there were no transcripts for the data, we used an automatic speech recognition API to obtain transcripts corresponding to the dataset and used them for training.**
+
+#### Sample 1
+Input User Audio
+<audio controls>
+  <source src="wavs/Expresso_model_generated/1_user.wav" type="audio/wav">
+</audio>
+
+User (Ground Truth): It's a very good way to put it. Yeah. He was he was part of the family. No other there's no other cat like like him. I don't. don't. Really imagine who's ever. been replacing him.<br>
+
+**Generated Spoken Response**
+
+<audio controls>
+  <source src="wavs/Expresso_model_generated/1_usdm.wav" type="audio/wav">
+</audio>
+<be>
+
+#### Sample 2
+Input User Audio
+<audio controls>
+  <source src="wavs/Expresso_model_generated/2_user.wav" type="audio/wav">
+</audio>
+
+User (Ground Truth): It's a very good way to put it. Yeah. He was he was part of the family. No other there's no other cat like like him. I don't. don't. Really imagine who's ever. been replacing him.<br>
+
+**Generated Spoken Response**
+
+<audio controls>
+  <source src="wavs/Expresso_model_generated/2_usdm.wav" type="audio/wav">
+</audio>
+<be>
+
+#### Sample 3
+Input User Audio
+<audio controls>
+  <source src="wavs/Expresso_model_generated/3_user.wav" type="audio/wav">
+</audio>
+
+User (Ground Truth): It's a very good way to put it. Yeah. He was he was part of the family. No other there's no other cat like like him. I don't. don't. Really imagine who's ever. been replacing him.<br>
+
+**Generated Spoken Response**
+
+<audio controls>
+  <source src="wavs/Expresso_model_generated/3_usdm.wav" type="audio/wav">
+</audio>
+<br>
 
 ## Unit-to-Speech Reconstruction Analysis
  **We extracted XLS-R based unit from the original audio, and then only those units to reconstruct the audio 3 times.** <br>
