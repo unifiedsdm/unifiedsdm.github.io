@@ -34,8 +34,9 @@ Input User Audio
   <source src="wavs/DailyTalk_model_generated/1_user.wav" type="audio/wav">
 </audio>
 
-User (Ground Truth): Not everyone. But a lot of people do, especially the young. It's a fine place to spend an evening with friends or to make some new friends.
+User (Ground Truth): Not everyone. But a lot of people do, especially the young. It's a fine place to spend an evening with friends or to make some new friends.<br>
 
+**Generated Spoken Response**
 <table>
 	<thead>
 		<tr>
@@ -64,8 +65,9 @@ Input User Audio
   <source src="wavs/DailyTalk_model_generated/2_user.wav" type="audio/wav">
 </audio>
 
-User (Ground Truth): I’m very well, Thank you. And you?
+User (Ground Truth): I’m very well, Thank you. And you?<br>
 
+**Generated Spoken Response**
 <table>
 	<thead>
 		<tr>
@@ -94,8 +96,9 @@ Input User Audio
   <source src="wavs/DailyTalk_model_generated/3_user.wav" type="audio/wav">
 </audio>
 
-User (Ground Truth): Yes, do you like it?
+User (Ground Truth): Yes, do you like it?<br>
 
+**Generated Spoken Response**
 <table>
 	<thead>
 		<tr>
@@ -127,8 +130,9 @@ Input User Audio
 
 User (Ground Truth): Linda? Is that you? I haven't seen you in ages!
 
-Text to generate: **Hi George! It's good to see you!**
+Text to generate: **Hi George! It's good to see you!** <br>
 
+**Generated Spoken Response**
 <table>
 	<thead>
 		<tr>
@@ -159,8 +163,9 @@ Input User Audio
 </audio>
 User (Ground Truth): We are all very proud of you.
 
-Text to generate: **I am very happy, too. It was a big game and I won.**
+Text to generate: **I am very happy, too. It was a big game and I won.** <br>
 
+**Generated Spoken Response**
 <table>
 	<thead>
 		<tr>
@@ -191,8 +196,9 @@ Input User Audio
 </audio>
 User (Ground Truth): Ah, that's all part of the fun. What do you think of these shorts?
 
-Text to generate: **They look really good on you. They look comfortable too.**
+Text to generate: **They look really good on you. They look comfortable too.** <br>
 
+**Generated Spoken Response**
 <table>
 	<thead>
 		<tr>
