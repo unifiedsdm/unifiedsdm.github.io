@@ -216,7 +216,7 @@ Text to generate: **They look really good on you. They look comfortable too.**
 <br>
 
 ## Multi-Turn Scenarios (Fisher)
- **All the speakers below are now seen during training.**
+ **All the speakers below are not seen during training.**
 
 #### Sample 1
 Input Multi-turn Spoken Dialogues
