@@ -1,5 +1,22 @@
 # Integrating Paralinguistics in Speech-Empowered Large Language Models for Natural Conversation
 
+- [Paper](https://arxiv.org/abs/2402.05706)
+- Code and checkpoints will be released soon!
+   
+### Authors
+- Heeseung Kim <a href="gmltmd789@snu.ac.kr">gmltmd789@snu.ac.kr</a>
+- Soonshin Seo <a href="sunshin.seo@navercorp.com">sunshin.seo@navercorp.com</a>
+- Kyeongseok Jeong <a href="ks.jeong@navercorp.com">ks.jeong@navercorp.com</a>
+- Ohsung Kwon <a href="osung.kwon@navercorp.com">osung.kwon@navercorp.com</a>
+- Soyoon Kim  <a href="soyoon.kim@navercorp.com">soyoon.kim@navercorp.com</a>
+- Jungwhan Kim <a href="jungwhan.kim@navercorp.com">jungwhan.kim@navercorp.com</a>
+- Jaehong Lee <a href="jaehong.l@navercorp.com">jaehong.l@navercorp.com</a>
+- Eunwoo Song <a href="eunwoo.song@navercorp.com">eunwoo.song@navercorp.com</a>
+- Myungwoo Oh <a href="myungwoo.oh@navercorp.com">myungwoo.oh@navercorp.com</a>
+- Jung-Woo Ha <a href="jungwoo.ha@navercorp.com">jungwoo.ha@navercorp.com</a>
+- Sungroh Yoon (Corresponding author) <a href="sryoon@snu.ac.kr">sryoon@snu.ac.kr</a>
+- Kang Min Yoo (Corresponding author) <a href="kangmin.yoo@navercorp.com">kangmin.yoo@navercorp.com</a>
+
 ## Abstract
 Recent work shows promising results in expanding the capabilities of large language models (LLM) to directly understand and synthesize speech. However, an LLM-based strategy for modeling spoken dialogs remains elusive, calling for further investigation. This paper introduces an extensive speech-text LLM framework, the Unified Spoken Dialog Model (USDM), designed to generate coherent spoken responses with naturally occurring prosodic features relevant to the given input speech without relying on explicit automatic speech recognition (ASR) or text-to-speech (TTS) systems. We have verified the inclusion of prosody in speech tokens that predominantly contain semantic information and have used this foundation to construct a prosody-infused speech-text model. Additionally, we propose a generalized speech-text pretraining scheme that enhances the capture of cross-modal semantics. To construct USDM, we fine-tune our speech-text model on spoken dialog data using a multi-step spoken dialog template that stimulates the chain-of-reasoning capabilities exhibited by the underlying LLM. Automatic and human evaluations on the DailyTalk dataset demonstrate that our approach effectively generates natural-sounding spoken responses, surpassing previous and cascaded baselines. We will make our code and checkpoints publicly available.
 
