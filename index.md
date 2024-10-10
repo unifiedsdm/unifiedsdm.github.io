@@ -1,7 +1,7 @@
-# Integrating Paralinguistics in Speech-Empowered Large Language Models for Natural Conversation
+# Paralinguistics-Aware Speech-Empowered Large Language Models for Natural Conversation
 
 - [Paper](https://arxiv.org/abs/2402.05706)
-- Code and checkpoints will be released soon!
+- [Code and checkpoints](https://github.com/naver-ai/usdm)
    
 ### Authors
 - Heeseung Kim <a href="gmltmd789@snu.ac.kr">gmltmd789@snu.ac.kr</a>
