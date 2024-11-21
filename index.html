@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Paralinguistics-Aware Speech-Empowered Large Language Models for Natural Conversation">
+    <title>Paralinguistics-Aware Speech-Empowered Large Language Models for Natural Conversation</title>
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="icon" href="./static/images/favicon.svg">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://github.com/naver-ai/usdm">
+            <span class="icon">
+                <i class="fab fa-github"></i>
+            </span>
+             GitHub
+        </a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+                    <h1 class="title is-1 publication-title">Paralinguistics-Aware Speech-Empowered LLMs for Natural Conversation</h1>
+                    <div class="is-size-5 publication-authors">
+                        <span class="author-block"><a href="https://gmltmd789.github.io">Heeseung Kim</a><sup>1</sup>,</span>
+                        <span class="author-block"><a href="https://scholar.google.co.kr/citations?user=ZKeGcP8AAAAJ">Soonshin Seo</a><sup>2</sup>,</span>
+                        <span class="author-block"><a href="https://scholar.google.com/citations?user=9LtiWbwAAAAJ">Kyeongseok Jeong</a><sup>2</sup>,</span>
+                        <span class="author-block"><a href="https://www.linkedin.com/in/ohsung-kwon-78b091164">Ohsung Kwon</a><sup>2</sup>,</span>
+                        <span class="author-block"><a href="https://www.linkedin.com/in/soyoon-kim-b402a769">Soyoon Kim</a><sup>2</sup>,</span>
+                        <span class="author-block"><a href="https://scholar.google.com/citations?user=EB-MgDUAAAAJ">Jungwhan Kim</a><sup>2</sup>,</span>
+                        <span class="author-block"><a href="https://www.linkedin.com/in/jaehong-lee-74a0901b1">Jaehong Lee</a><sup>2</sup>,</span>
+                        <span class="author-block"><a href="https://sewplay.github.io/">Eunwoo Song</a><sup>2</sup>,</span>
+                        <span class="author-block"><a href="https://www.linkedin.com/in/myungwoo5">Myungwoo Oh</a><sup>2</sup>,</span>
+                        <span class="author-block"><a href="https://scholar.google.com/citations?user=eGj3ay4AAAAJ">Jung-Woo Ha</a><sup>2</sup>,</span>
+                        <span class="author-block"><a href="https://scholar.google.com/citations?user=Bphl_fIAAAAJ">Sungroh Yoon</a><sup>1,†</sup>,</span>
+                        <span class="author-block"><a href="https://scholar.google.com/citations?user=BqaWtH8AAAAJ">Kang Min Yoo</a><sup>2,†</sup></span>
+                    </div>                    
+                    <div class="is-size-6 publication-affiliations">
+                        <span><sup>1</sup>Seoul National University,</span>
+                        <span><sup>2</sup>NAVER Cloud,</span>
+                        <span><sup>†</sup>Corresponding Authors</span>
+                    </div>
+		    <div style="margin-bottom: 10px;"></div> 
+                    <div class="publication-links">
+                        <a href="https://openreview.net/forum?id=NjewXJUDYq" class="external-link button is-normal is-rounded is-dark">
+                            <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                            <span>Paper</span>
+                        </a>
+                        <a href="https://github.com/naver-ai/usdm" class="external-link button is-normal is-rounded is-dark">
+                            <span class="icon"><i class="fab fa-github"></i></span>
+                            <span>Code</span>
+                        </a>
+                        <a href="https://huggingface.co/collections/naver-ai/usdm-67219a13bb48ef6a2c2bbecb" class="external-link button is-normal is-rounded is-dark">
+                            <span class="icon"><i class="fas fa-cloud-download-alt"></i></span>
+                            <span>Checkpoints</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+	
+<section class="section" style="padding-top: 20px; padding-bottom: 20px;">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered">
+            <div class="column has-text-centered">
+                <h2 class="title is-3" style="margin-bottom: 15px;">Overview of USDM</h2>
+                <img src="./static/png/overview.png" alt="Teaser Image Overview" style="max-width: 100%; height: auto; margin: 10px 0;">
+            </div>
+        </div>
+    </div>
+</section>
+	
+<section class="section is-light">
+    <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Emotion-Rich Single-Turn Conversations from Expresso</h2>
+        <div class="columns is-multiline">
+            <!-- Sample 1 -->
+            <div class="column is-full">
+                <div class="card">
+                    <header class="card-header">
+                        <p class="card-header-title">Sample 1</p>
+                    </header>
+                    <div class="card-content">
+                        <div class="columns">
+                            <div class="column is-half">
+                                <div class="box has-background-light" style="padding: 20px;">
+                                    <p class="has-text-weight-bold">User Audio:</p>
+                                    <audio controls style="margin-bottom: 15px;">
+                                        <source src="wavs/Expresso_model_generated/1_user.wav" type="audio/wav">
+                                    </audio>
+                                    <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                                        <img src="static/png/user.png" alt="icon" style="width: 40px; height: 40px; margin-right: 10px;">
+                                        <div style="background-color: #e8e8e8; padding: 15px; border-radius: 15px; max-width: 65%;">
+                                            It's a very good way to put it. Yeah. He was he was part of the family. No other there's no other cat like like him. I don't. don't. Really imagine who's ever. been replacing him.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column is-half">
+                                <div class="box has-background-primary-light" style="padding: 20px;">
+                                    <p class="has-text-weight-bold">USDM Response:</p>
+                                    <audio controls style="margin-bottom: 15px;">
+                                        <source src="wavs/Expresso_model_generated/1_usdm.wav" type="audio/wav">
+                                    </audio>
+                                    <div style="display: flex; align-items: center; margin-bottom: 20px; justify-content: flex-end;">
+                                        <div style="background-color: #d1f0f7; padding: 15px; border-radius: 15px; max-width: 65%; margin-right: 10px;">
+                                            Yeah. I mean, I know he was a bit of a pain in the butt, but, I mean, I don't think anybody could ever replace him. He was just that one of a kind.
+                                        </div>
+                                        <img src="static/png/usdm.png" alt="icon" style="width: 40px; height: 40px;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Sample 2 -->
+            <div class="column is-full">
+                <div class="card">
+                    <header class="card-header">
+                        <p class="card-header-title">Sample 2</p>
+                    </header>
+                    <div class="card-content">
+                        <div class="columns">
+                            <div class="column is-half">
+                                <div class="box has-background-light" style="padding: 20px;">
+                                    <p class="has-text-weight-bold">User Audio:</p>
+                                    <audio controls style="margin-bottom: 15px;">
+                                        <source src="wavs/Expresso_model_generated/2_user.wav" type="audio/wav">
+                                    </audio>
+                                    <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                                        <img src="static/png/user.png" alt="icon" style="width: 40px; height: 40px; margin-right: 10px;">
+                                        <div style="background-color: #e8e8e8; padding: 15px; border-radius: 15px; max-width: 65%;">
+                                            Oh my gosh. Could he? Tell me about it. Remember when you used to make cookies and he would intentionally bat it around with his paws? He'd he'd get in the dough, and we'd have to throw everything out again.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column is-half">
+                                <div class="box has-background-primary-light" style="padding: 20px;">
+                                    <p class="has-text-weight-bold">USDM Response:</p>
+                                    <audio controls style="margin-bottom: 15px;">
+                                        <source src="wavs/Expresso_model_generated/2_usdm.wav" type="audio/wav">
+                                    </audio>
+                                    <div style="display: flex; align-items: center; margin-bottom: 20px; justify-content: flex-end;">
+                                        <div style="background-color: #d1f0f7; padding: 15px; border-radius: 15px; max-width: 65%; margin-right: 10px;">
+                                            Yeah. That was a lot of wasted dough and a lot of wasted time and energy. That was not a good stretch of our resources here on Earth. Yeah.
+                                        </div>
+                                        <img src="static/png/usdm.png" alt="icon" style="width: 40px; height: 40px;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Sample 3 -->
+            <div class="column is-full">
+                <div class="card">
+                    <header class="card-header">
+                        <p class="card-header-title">Sample 3</p>
+                    </header>
+                    <div class="card-content">
+                        <div class="columns">
+                            <div class="column is-half">
+                                <div class="box has-background-light" style="padding: 20px;">
+                                    <p class="has-text-weight-bold">User Audio:</p>
+                                    <audio controls style="margin-bottom: 15px;">
+                                        <source src="wavs/Expresso_model_generated/3_user.wav" type="audio/wav">
+                                    </audio>
+                                    <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                                        <img src="static/png/user.png" alt="icon" style="width: 40px; height: 40px; margin-right: 10px;">
+                                        <div style="background-color: #e8e8e8; padding: 15px; border-radius: 15px; max-width: 65%;">
+                                            Does anybody want to hear about this? This is not a good thing to tell people about.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column is-half">
+                                <div class="box has-background-primary-light" style="padding: 20px;">
+                                    <p class="has-text-weight-bold">USDM Response:</p>
+                                    <audio controls style="margin-bottom: 15px;">
+                                        <source src="wavs/Expresso_model_generated/3_usdm.wav" type="audio/wav">
+                                    </audio>
+                                    <div style="display: flex; align-items: center; margin-bottom: 20px; justify-content: flex-end;">
+                                        <div style="background-color: #d1f0f7; padding: 15px; border-radius: 15px; max-width: 65%; margin-right: 10px;">
+                                            I don't think it does sound like a good thing to tell people about.
+                                        </div>
+                                        <img src="static/png/usdm.png" alt="icon" style="width: 40px; height: 40px;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section is-light">
+    <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Multi-Turn Telephony Conversations from Fisher</h2>
+        <div class="columns is-multiline">
+        <!-- Sample 1 -->
+        <div class="column is-full">
+            <div class="card">
+                <header class="card-header">
+                    <p class="card-header-title">Sample 1</p>
+                </header>
+                <div class="card-content">
+                    <div class="columns">
+                        <div class="column is-half">
+                            <div class="box has-background-light" style="padding: 20px;">
+                                <p class="has-text-weight-bold">Conversation History of Two <span style="color: red; font-style: italic;">UNSEEN</span> Speakers:</p>
+                                <audio controls style="margin-bottom: 15px;">
+                                    <source src="wavs/Fisher_model_generated/1_user.wav" type="audio/wav">
+                                </audio>
+                                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                                    <img src="static/png/user.png" alt="icon" style="width: 40px; height: 40px; margin-right: 10px;">
+                                    <div style="background-color: #e8e8e8; padding: 15px; border-radius: 15px; max-width: 65%; ">
+                                        Oh.
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: center; margin-bottom: 20px; justify-content: flex-end;">
+                                    <div style="background-color: #d1f0f7; padding: 15px; border-radius: 15px; max-width: 65%; margin-right: 10px; ">
+                                        Yeah. So when we were in Florida, Orlando Magic, basketball was the big thing because of Shaquille O'Neil.
+                                    </div>
+                                    <img src="static/png/usdm.png" alt="icon" style="width: 40px; height: 40px;">
+                                </div>
+                                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                                    <img src="static/png/user.png" alt="icon" style="width: 40px; height: 40px; margin-right: 10px;">
+                                    <div style="background-color: #e8e8e8; padding: 15px; border-radius: 15px; max-width: 65%; ">
+                                        I see.
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: center; margin-bottom: 20px; justify-content: flex-end;">
+                                    <div style="background-color: #d1f0f7; padding: 15px; border-radius: 15px; max-width: 65%; margin-right: 10px; ">
+                                        But then he got mad at everybody and left us and went to the Lakers. [LAUGH].
+                                    </div>
+                                    <img src="static/png/usdm.png" alt="icon" style="width: 40px; height: 40px;">
+                                </div>
+                                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                                    <img src="static/png/user.png" alt="icon" style="width: 40px; height: 40px; margin-right: 10px;">
+                                    <div style="background-color: #e8e8e8; padding: 15px; border-radius: 15px; max-width: 65%; ">
+                                        [LAUGH]. So you were kinda involved in basketball too, then?
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column is-half">
+                            <div class="box has-background-primary-light" style="padding: 20px;">
+                                <p class="has-text-weight-bold">USDM Response:</p>
+                                <audio controls style="margin-bottom: 15px;">
+                                    <source src="wavs/Fisher_model_generated/1_usdm.wav" type="audio/wav">
+                                </audio>
+                                <div style="display: flex; align-items: center; margin-bottom: 20px; justify-content: flex-end;">
+                                    <div style="background-color: #d1f0f7; padding: 15px; border-radius: 15px; max-width: 65%; margin-right: 10px; ">
+                                        Yeah, yeah. And um, but then when he went to the Lakers, that was kinda sad. It's like, oh, no. [LAUGH].
+                                    </div>
+                                    <img src="static/png/usdm.png" alt="icon" style="width: 40px; height: 40px;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Sample 2 -->
+	<div class="column is-full">
+	    <div class="card">
+	        <header class="card-header">
+	            <p class="card-header-title">Sample 2</p>
+	        </header>
+	        <div class="card-content">
+	            <div class="columns">
+	                <div class="column is-half">
+	                    <div class="box has-background-light" style="padding: 20px;">
+	                        <p class="has-text-weight-bold">Conversation History of Two <span style="color: red; font-style: italic;">UNSEEN</span> Speakers:</p>
+	                        <audio controls style="margin-bottom: 15px;">
+	                            <source src="wavs/Fisher_model_generated/2_user.wav" type="audio/wav">
+	                        </audio>
+	                        <div style="display: flex; align-items: center; margin-bottom: 20px;">
+	                            <img src="static/png/user.png" alt="icon" style="width: 40px; height: 40px; margin-right: 10px;">
+	                            <div style="background-color: #e8e8e8; padding: 15px; border-radius: 15px; max-width: 65%; ">
+	                                Oh no [LAUGH] Did you switch over or try to press another thing?
+	                            </div>
+	                        </div>
+	                        <div style="display: flex; align-items: center; margin-bottom: 20px; justify-content: flex-end;">
+	                            <div style="background-color: #d1f0f7; padding: 15px; border-radius: 15px; max-width: 65%; margin-right: 10px; ">
+	                                No, it we were talking, and boom, she was gone and I was gone off her line.
+	                            </div>
+	                            <img src="static/png/usdm.png" alt="icon" style="width: 40px; height: 40px;">
+	                        </div>
+	                        <div style="display: flex; align-items: center; margin-bottom: 20px;">
+	                            <img src="static/png/user.png" alt="icon" style="width: 40px; height: 40px; margin-right: 10px;">
+	                            <div style="background-color: #e8e8e8; padding: 15px; border-radius: 15px; max-width: 65%; ">
+	                                Oh go- maybe she did something.
+	                            </div>
+	                        </div>
+	                        <div style="display: flex; align-items: center; margin-bottom: 20px; justify-content: flex-end;">
+	                            <div style="background-color: #d1f0f7; padding: 15px; border-radius: 15px; max-width: 65%; margin-right: 10px; ">
+	                                Oh.
+	                            </div>
+	                            <img src="static/png/usdm.png" alt="icon" style="width: 40px; height: 40px;">
+	                        </div>
+	                        <div style="display: flex; align-items: center; margin-bottom: 20px;">
+	                            <img src="static/png/user.png" alt="icon" style="width: 40px; height: 40px; margin-right: 10px;">
+	                            <div style="background-color: #e8e8e8; padding: 15px; border-radius: 15px; max-width: 65%; ">
+	                                Maybe she hung up or did something happened with her phone so they probably disconnected the both of you.
+	                            </div>
+	                        </div>
+	                        <div style="display: flex; align-items: center; margin-bottom: 20px; justify-content: flex-end;">
+	                            <div style="background-color: #d1f0f7; padding: 15px; border-radius: 15px; max-width: 65%; margin-right: 10px; ">
+	                                So I gotta start all over again. [LAUGH]
+	                            </div>
+	                            <img src="static/png/usdm.png" alt="icon" style="width: 40px; height: 40px;">
+	                        </div>
+	                        <div style="display: flex; align-items: center; margin-bottom: 20px;">
+	                            <img src="static/png/user.png" alt="icon" style="width: 40px; height: 40px; margin-right: 10px;">
+	                            <div style="background-color: #e8e8e8; padding: 15px; border-radius: 15px; max-width: 65%; ">
+	                                Yeah. [LAUGH] Oh gosh. Um, so what did you talk about last time was it just
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="column is-half">
+	                    <div class="box has-background-primary-light" style="padding: 20px;">
+	                        <p class="has-text-weight-bold">USDM Response:</p>
+	                        <audio controls style="margin-bottom: 15px;">
+	                            <source src="wavs/Fisher_model_generated/2_usdm.wav" type="audio/wav">
+	                        </audio>
+	                        <div style="display: flex; align-items: center; margin-bottom: 20px; justify-content: flex-end;">
+	                            <div style="background-color: #d1f0f7; padding: 15px; border-radius: 15px; max-width: 65%; margin-right: 10px; ">
+	                                Oh, it was about sports.
+	                            </div>
+	                            <img src="static/png/usdm.png" alt="icon" style="width: 40px; height: 40px;">
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+        <!-- Sample 3 -->
+        <div class="column is-full">
+            <div class="card">
+                <header class="card-header">
+                    <p class="card-header-title">Sample 3</p>
+                </header>
+                <div class="card-content">
+                    <div class="columns">
+                        <div class="column is-half">
+                            <div class="box has-background-light" style="padding: 20px;">
+                                <p class="has-text-weight-bold">Conversation History of Two <span style="color: red; font-style: italic;">UNSEEN</span> Speakers:</p>
+                                <audio controls style="margin-bottom: 15px;">
+                                    <source src="wavs/Fisher_model_generated/3_user.wav" type="audio/wav">
+                                </audio>
+                                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                                    <img src="static/png/user.png" alt="icon" style="width: 40px; height: 40px; margin-right: 10px;">
+                                    <div style="background-color: #e8e8e8; padding: 15px; border-radius: 15px; max-width: 65%; ">
+                                        How did you get into it?
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: center; margin-bottom: 20px; justify-content: flex-end;">
+                                    <div style="background-color: #d1f0f7; padding: 15px; border-radius: 15px; max-width: 65%; margin-right: 10px; ">
+                                        Ah, I was in a forum and, ah, some guys were talking about it, so I checked it out and I just signed up for it. Thought, 'What the heck'. Um, man this thing is, ah I can barely hear you. Can you hear me all right?
+                                    </div>
+                                    <img src="static/png/usdm.png" alt="icon" style="width: 40px; height: 40px;">
+                                </div>
+                                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                                    <img src="static/png/user.png" alt="icon" style="width: 40px; height: 40px; margin-right: 10px;">
+                                    <div style="background-color: #e8e8e8; padding: 15px; border-radius: 15px; max-width: 65%; ">
+                                        Yeah. [COUGH] But I'm on a cell phone, so maybe that's why.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column is-half">
+                            <div class="box has-background-primary-light" style="padding: 20px;">
+                                <p class="has-text-weight-bold">USDM Response:</p>
+                                <audio controls style="margin-bottom: 15px;">
+                                    <source src="wavs/Fisher_model_generated/3_usdm.wav" type="audio/wav">
+                                </audio>
+                                <div style="display: flex; align-items: center; margin-bottom: 20px; justify-content: flex-end;">
+                                    <div style="background-color: #d1f0f7; padding: 15px; border-radius: 15px; max-width: 65%; margin-right: 10px; ">
+                                        Oh, okay. Yeah, maybe because I keep getting disconnected.
+                                    </div>
+                                    <img src="static/png/usdm.png" alt="icon" style="width: 40px; height: 40px;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Sample 4 -->
+        <div class="column is-full">
+            <div class="card">
+                <header class="card-header">
+                    <p class="card-header-title">Sample 4</p>
+                </header>
+                <div class="card-content">
+                    <div class="columns">
+                        <div class="column is-half">
+                            <div class="box has-background-light" style="padding: 20px;">
+                                <p class="has-text-weight-bold">Conversation History of Two <span style="color: red; font-style: italic;">UNSEEN</span> Speakers:</p>
+                                <audio controls style="margin-bottom: 15px;">
+                                    <source src="wavs/Fisher_model_generated/4_user.wav" type="audio/wav">
+                                </audio>
+                                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                                    <img src="static/png/user.png" alt="icon" style="width: 40px; height: 40px; margin-right: 10px;">
+                                    <div style="background-color: #e8e8e8; padding: 15px; border-radius: 15px; max-width: 65%; ">
+                                        Oh.
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: center; margin-bottom: 20px; justify-content: flex-end;">
+                                    <div style="background-color: #d1f0f7; padding: 15px; border-radius: 15px; max-width: 65%; margin-right: 10px; ">
+                                        So that's been from Chapel Hill so it's been a it's been a big move for me and, you know, I guess the conversations kind of, ah, you know, it the friendship thing is it kind of connects here because I left a lot of friends behind. But, you know, I still try to keep in touch with them and I've made some new friends in LA and I've got a lot of friends up in San- San Francisco.
+                                    </div>
+                                    <img src="static/png/usdm.png" alt="icon" style="width: 40px; height: 40px;">
+                                </div>
+                                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                                    <img src="static/png/user.png" alt="icon" style="width: 40px; height: 40px; margin-right: 10px;">
+                                    <div style="background-color: #e8e8e8; padding: 15px; border-radius: 15px; max-width: 65%; ">
+                                        Okay. Are you mo- are you moving there for a job?
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column is-half">
+                            <div class="box has-background-primary-light" style="padding: 20px;">
+                                <p class="has-text-weight-bold">USDM Response:</p>
+                                <audio controls style="margin-bottom: 15px;">
+                                    <source src="wavs/Fisher_model_generated/4_usdm.wav" type="audio/wav">
+                                </audio>
+                                <div style="display: flex; align-items: center; margin-bottom: 20px; justify-content: flex-end;">
+                                    <div style="background-color: #d1f0f7; padding: 15px; border-radius: 15px; max-width: 65%; margin-right: 10px; ">
+                                        No. I just kinda I just kinda wanted to go to college up there. I wanted to go to college in San Jose. So.
+                                    </div>
+                                    <img src="static/png/usdm.png" alt="icon" style="width: 40px; height: 40px;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+	
+<section class="section is-light">
+    <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Model Comparison for DailyTalk</h2>
+        <div class="columns is-multiline">
+            <!-- Sample 1 -->
+            <div class="column is-full">
+                <div class="card">
+                    <header class="card-header">
+                        <p class="card-header-title">Sample 1</p>
+                    </header>
+                    <div class="card-content">
+                        <!-- User Audio -->
+                        <div class="box has-background-light">
+                            <p class="has-text-weight-bold">User Audio:</p>
+                            <audio controls style="margin-bottom: 15px; width: 300px;">
+                                <source src="wavs/DailyTalk_model_generated/1_user.wav" type="audio/wav">
+                            </audio>
+                            <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                                <img src="static/png/user.png" alt="User Icon" style="width: 40px; height: 40px; margin-right: 10px;">
+                                <div style="background-color: #e8e8e8; padding: 15px; border-radius: 15px; max-width: 65%;">
+                                    Thank you. So what do you think? Would we have a good time?
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Model Responses Comparison -->
+                        <div class="box has-background-primary-light" style="margin-bottom: 20px; padding: 20px;">
+                            <p class="has-text-weight-bold">Model Responses Comparison:</p>
+                            <div class="model-response-comparison" style="overflow-x: auto; white-space: nowrap;">
+                                <table class="table is-fullwidth is-hoverable" style="margin-top: 20px;">
+                                    <thead>
+                                        <tr>
+                                            <th>Ground Truth</th>
+                                            <th>USDM</th>
+                                            <th>From Scratch</th>
+                                            <th>Cascaded</th>
+                                            <th>SpeechGPT</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <audio controls style="width: 200px;">
+                                                    <source src="wavs/DailyTalk_model_generated/1_ground_truth.wav" type="audio/wav">
+                                                </audio>
+                                            </td>
+                                            <td>
+                                                <audio controls style="width: 200px;">
+                                                    <source src="wavs/DailyTalk_model_generated/1_usdm.wav" type="audio/wav">
+                                                </audio>
+                                            </td>
+                                            <td>
+                                                <audio controls style="width: 200px;">
+                                                    <source src="wavs/DailyTalk_model_generated/1_from_scratch.wav" type="audio/wav">
+                                                </audio>
+                                            </td>
+                                            <td>
+                                                <audio controls style="width: 200px;">
+                                                    <source src="wavs/DailyTalk_model_generated/1_cascaded.wav" type="audio/wav">
+                                                </audio>
+                                            </td>
+                                            <td>
+                                                <audio controls style="width: 200px;">
+                                                    <source src="wavs/DailyTalk_model_generated/1_speechgpt.wav" type="audio/wav">
+                                                </audio>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Sample 2 -->
+		<div class="column is-full">
+		    <div class="card">
+		        <header class="card-header">
+		            <p class="card-header-title">Sample 2</p>
+		        </header>
+		        <div class="card-content">
+		            <!-- User Audio -->
+		            <div class="box has-background-light">
+		                <p class="has-text-weight-bold">User Audio:</p>
+		                <audio controls style="margin-bottom: 15px; width: 300px;">
+		                    <source src="wavs/DailyTalk_model_generated/2_user.wav" type="audio/wav">
+		                </audio>
+		                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+		                    <img src="static/png/user.png" alt="User Icon" style="width: 40px; height: 40px; margin-right: 10px;">
+		                    <div style="background-color: #e8e8e8; padding: 15px; border-radius: 15px; max-width: 65%;">
+		                        The stone is a prehistoric log. It was turned to stone millions of years ago.
+		                    </div>
+		                </div>
+		            </div>
+		            <!-- Model Responses Comparison -->
+		            <div class="box has-background-primary-light" style="margin-bottom: 20px; padding: 20px;">
+		                <p class="has-text-weight-bold">Model Responses Comparison:</p>
+		                <div class="model-response-comparison" style="overflow-x: auto; white-space: nowrap;">
+		                    <table class="table is-fullwidth is-hoverable" style="margin-top: 20px;">
+		                        <thead>
+		                            <tr>
+		                                <th>Ground Truth</th>
+		                                <th>USDM</th>
+		                                <th>From Scratch</th>
+		                                <th>Cascaded</th>
+		                                <th>SpeechGPT</th>
+		                            </tr>
+		                        </thead>
+		                        <tbody>
+		                            <tr>
+		                                <td>
+		                                    <audio controls style="width: 200px;">
+		                                        <source src="wavs/DailyTalk_model_generated/2_ground_truth.wav" type="audio/wav">
+		                                    </audio>
+		                                </td>
+		                                <td>
+		                                    <audio controls style="width: 200px;">
+		                                        <source src="wavs/DailyTalk_model_generated/2_usdm.wav" type="audio/wav">
+		                                    </audio>
+		                                </td>
+		                                <td>
+		                                    <audio controls style="width: 200px;">
+		                                        <source src="wavs/DailyTalk_model_generated/2_from_scratch.wav" type="audio/wav">
+		                                    </audio>
+		                                </td>
+		                                <td>
+		                                    <audio controls style="width: 200px;">
+		                                        <source src="wavs/DailyTalk_model_generated/2_cascaded.wav" type="audio/wav">
+		                                    </audio>
+		                                </td>
+		                                <td>
+		                                    <audio controls style="width: 200px;">
+		                                        <source src="wavs/DailyTalk_model_generated/2_speechgpt.wav" type="audio/wav">
+		                                    </audio>
+		                                </td>
+		                            </tr>
+		                        </tbody>
+		                    </table>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+		
+		<!-- Sample 3 -->
+		<div class="column is-full">
+		    <div class="card">
+		        <header class="card-header">
+		            <p class="card-header-title">Sample 3</p>
+		        </header>
+		        <div class="card-content">
+		            <!-- User Audio -->
+		            <div class="box has-background-light">
+		                <p class="has-text-weight-bold">User Audio:</p>
+		                <audio controls style="margin-bottom: 15px; width: 300px;">
+		                    <source src="wavs/DailyTalk_model_generated/3_user.wav" type="audio/wav">
+		                </audio>
+		                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+		                    <img src="static/png/user.png" alt="User Icon" style="width: 40px; height: 40px; margin-right: 10px;">
+		                    <div style="background-color: #e8e8e8; padding: 15px; border-radius: 15px; max-width: 65%;">
+		                        Great. Shall I meet you there around seven forty-five tomorrow night?
+		                    </div>
+		                </div>
+		            </div>
+		            <!-- Model Responses Comparison -->
+		            <div class="box has-background-primary-light" style="margin-bottom: 20px; padding: 20px;">
+		                <p class="has-text-weight-bold">Model Responses Comparison:</p>
+		                <div class="model-response-comparison" style="overflow-x: auto; white-space: nowrap;">
+		                    <table class="table is-fullwidth is-hoverable" style="margin-top: 20px;">
+		                        <thead>
+		                            <tr>
+		                                <th>Ground Truth</th>
+		                                <th>USDM</th>
+		                                <th>From Scratch</th>
+		                                <th>Cascaded</th>
+		                                <th>SpeechGPT</th>
+		                            </tr>
+		                        </thead>
+		                        <tbody>
+		                            <tr>
+		                                <td>
+		                                    <audio controls style="width: 200px;">
+		                                        <source src="wavs/DailyTalk_model_generated/3_ground_truth.wav" type="audio/wav">
+		                                    </audio>
+		                                </td>
+		                                <td>
+		                                    <audio controls style="width: 200px;">
+		                                        <source src="wavs/DailyTalk_model_generated/3_usdm.wav" type="audio/wav">
+		                                    </audio>
+		                                </td>
+		                                <td>
+		                                    <audio controls style="width: 200px;">
+		                                        <source src="wavs/DailyTalk_model_generated/3_from_scratch.wav" type="audio/wav">
+		                                    </audio>
+		                                </td>
+		                                <td>
+		                                    <audio controls style="width: 200px;">
+		                                        <source src="wavs/DailyTalk_model_generated/3_cascaded.wav" type="audio/wav">
+		                                    </audio>
+		                                </td>
+		                                <td>
+		                                    <audio controls style="width: 200px;">
+		                                        <source src="wavs/DailyTalk_model_generated/3_speechgpt.wav" type="audio/wav">
+		                                    </audio>
+		                                </td>
+		                            </tr>
+		                        </tbody>
+		                    </table>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section is-light">
+    <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Model Comparison with GT Text Response for DailyTalk</h2>
+        <div class="columns is-multiline">
+            <!-- Sample 1 -->
+            <div class="column is-full">
+                <div class="card">
+                    <header class="card-header">
+                        <p class="card-header-title">Sample 1</p>
+                    </header>
+                    <div class="card-content">
+                        <div class="box has-background-light">
+                            <p class="has-text-weight-bold">User Audio:</p>
+                            <audio controls style="width: 200px;">
+                                <source src="wavs/DailyTalk_ground_truth_text/1_user.wav" type="audio/wav">
+                            </audio>
+                            <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                                <img src="static/png/user.png" alt="User Icon" style="width: 40px; height: 40px; margin-right: 10px;">
+                                <div style="background-color: #e8e8e8; padding: 15px; border-radius: 15px; max-width: 65%;">
+                                    Are you even glad that we get to buy new clothes too?
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box has-background-primary-light" style="padding: 20px;">
+                            <p class="has-text-weight-bold">Model Responses Comparison:</p>
+                            <div style="display: flex; align-items: center; margin-bottom: 20px; justify-content: flex-end;">
+                                <div style="background-color: #d1f0f7; padding: 15px; border-radius: 15px; max-width: 65%; margin-right: 10px;">
+                                    Ah, that’s all part of the fun. What do you think of these shorts?
+                                </div>
+                                <img src="static/png/usdm.png" alt="USDM Icon" style="width: 40px; height: 40px;">
+                            </div>
+                            <div class="model-response-comparison" style="overflow-x: auto; white-space: nowrap;">
+                                <table class="table is-fullwidth is-hoverable">
+                                    <thead>
+                                        <tr>
+                                            <th>Ground Truth</th>
+                                            <th>USDM</th>
+                                            <th>From Scratch</th>
+                                            <th>Cascaded</th>
+                                            <th>SpeechGPT</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><audio controls style="width: 200px;"><source src="wavs/DailyTalk_ground_truth_text/1_ground_truth.wav" type="audio/wav"></audio></td>
+                                            <td><audio controls style="width: 200px;"><source src="wavs/DailyTalk_ground_truth_text/1_usdm.wav" type="audio/wav"></audio></td>
+                                            <td><audio controls style="width: 200px;"><source src="wavs/DailyTalk_ground_truth_text/1_from_scratch.wav" type="audio/wav"></audio></td>
+                                            <td><audio controls style="width: 200px;"><source src="wavs/DailyTalk_ground_truth_text/1_cascaded.wav" type="audio/wav"></audio></td>
+                                            <td><audio controls style="width: 200px;"><source src="wavs/DailyTalk_ground_truth_text/1_speechgpt.wav" type="audio/wav"></audio></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Sample 2 -->
+            <div class="column is-full">
+                <div class="card">
+                    <header class="card-header">
+                        <p class="card-header-title">Sample 2</p>
+                    </header>
+                    <div class="card-content">
+                        <div class="box has-background-light">
+                            <p class="has-text-weight-bold">User Audio:</p>
+                            <audio controls style="width: 200px;">
+                                <source src="wavs/DailyTalk_ground_truth_text/2_user.wav" type="audio/wav">
+                            </audio>
+                            <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                                <img src="static/png/user.png" alt="User Icon" style="width: 40px; height: 40px; margin-right: 10px;">
+                                <div style="background-color: #e8e8e8; padding: 15px; border-radius: 15px; max-width: 65%;">
+                                    The checkroom is just behind the front door.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box has-background-primary-light" style="padding: 20px;">
+                            <p class="has-text-weight-bold">Model Responses Comparison:</p>
+                            <div style="display: flex; align-items: center; margin-bottom: 20px; justify-content: flex-end;">
+                                <div style="background-color: #d1f0f7; padding: 15px; border-radius: 15px; max-width: 65%; margin-right: 10px;">
+                                    Ok. I will deposit my bag right now.
+                                </div>
+                                <img src="static/png/usdm.png" alt="USDM Icon" style="width: 40px; height: 40px;">
+                            </div>
+                            <div class="model-response-comparison" style="overflow-x: auto; white-space: nowrap;">
+                                <table class="table is-fullwidth is-hoverable">
+                                    <thead>
+                                        <tr>
+                                            <th>Ground Truth</th>
+                                            <th>USDM</th>
+                                            <th>From Scratch</th>
+                                            <th>Cascaded</th>
+                                            <th>SpeechGPT</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><audio controls style="width: 200px;"><source src="wavs/DailyTalk_ground_truth_text/2_ground_truth.wav" type="audio/wav"></audio></td>
+                                            <td><audio controls style="width: 200px;"><source src="wavs/DailyTalk_ground_truth_text/2_usdm.wav" type="audio/wav"></audio></td>
+                                            <td><audio controls style="width: 200px;"><source src="wavs/DailyTalk_ground_truth_text/2_from_scratch.wav" type="audio/wav"></audio></td>
+                                            <td><audio controls style="width: 200px;"><source src="wavs/DailyTalk_ground_truth_text/2_cascaded.wav" type="audio/wav"></audio></td>
+                                            <td><audio controls style="width: 200px;"><source src="wavs/DailyTalk_ground_truth_text/2_speechgpt.wav" type="audio/wav"></audio></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Sample 3 -->
+            <div class="column is-full">
+                <div class="card">
+                    <header class="card-header">
+                        <p class="card-header-title">Sample 3</p>
+                    </header>
+                    <div class="card-content">
+                        <div class="box has-background-light">
+                            <p class="has-text-weight-bold">User Audio:</p>
+                            <audio controls style="width: 200px;">
+                                <source src="wavs/DailyTalk_ground_truth_text/3_user.wav" type="audio/wav">
+                            </audio>
+                            <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                                <img src="static/png/user.png" alt="User Icon" style="width: 40px; height: 40px; margin-right: 10px;">
+                                <div style="background-color: #e8e8e8; padding: 15px; border-radius: 15px; max-width: 65%;">
+                                    A garage sale… That’s where people check out cars, right?
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box has-background-primary-light" style="padding: 20px;">
+                            <p class="has-text-weight-bold">Model Responses Comparison:</p>
+                            <div style="display: flex; align-items: center; margin-bottom: 20px; justify-content: flex-end;">
+                                <div style="background-color: #d1f0f7; padding: 15px; border-radius: 15px; max-width: 65%; margin-right: 10px;">
+                                    What? Cars? Umm are you serious?
+                                </div>
+                                <img src="static/png/usdm.png" alt="USDM Icon" style="width: 40px; height: 40px;">
+                            </div>
+                            <div class="model-response-comparison" style="overflow-x: auto; white-space: nowrap;">
+                                <table class="table is-fullwidth is-hoverable">
+                                    <thead>
+                                        <tr>
+                                            <th>Ground Truth</th>
+                                            <th>USDM</th>
+                                            <th>From Scratch</th>
+                                            <th>Cascaded</th>
+                                            <th>SpeechGPT</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><audio controls style="width: 200px;"><source src="wavs/DailyTalk_ground_truth_text/3_ground_truth.wav" type="audio/wav"></audio></td>
+                                            <td><audio controls style="width: 200px;"><source src="wavs/DailyTalk_ground_truth_text/3_usdm.wav" type="audio/wav"></audio></td>
+                                            <td><audio controls style="width: 200px;"><source src="wavs/DailyTalk_ground_truth_text/3_from_scratch.wav" type="audio/wav"></audio></td>
+                                            <td><audio controls style="width: 200px;"><source src="wavs/DailyTalk_ground_truth_text/3_cascaded.wav" type="audio/wav"></audio></td>
+                                            <td><audio controls style="width: 200px;"><source src="wavs/DailyTalk_ground_truth_text/3_speechgpt.wav" type="audio/wav"></audio></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+	
+<section class="section is-light">
+    <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Unit-to-Speech Reconstruction Analysis (Section 3.1)</h2>
+        <p>We extracted XLS-R based unit from the original audio, and then only those units to reconstruct the audio 3 times. Through that sample, we can understand what information is contained in the units. We used speech from Expresso (Nguyen et al., 2023), Fisher (Cieri et al., 2004), and GigaSpeech (Chen et al., 2021) datasets.</p>
+        <div style="margin-bottom: 20px;"></div> 
+        <div class="columns is-multiline">
+            <!-- Sample 1 -->
+            <div class="column is-full">
+                <div class="card">
+                    <header class="card-header">
+                        <p class="card-header-title">Sample 1</p>
+                    </header>
+                    <div class="card-content">
+                        <div class="model-response-comparison" style="overflow-x: auto; white-space: nowrap;">
+                            <table class="table is-fullwidth">
+                                <thead>
+                                    <tr>
+                                        <th>Ground Truth</th>
+                                        <th>Reconstructed Audio 1</th>
+                                        <th>Reconstructed Audio 2</th>
+                                        <th>Reconstructed Audio 3</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><audio controls style="width: 200px;"><source src="wavs/unit-based-Voicebox/1_ground_truth.wav" type="audio/wav"></audio></td>
+                                        <td><audio controls style="width: 200px;"><source src="wavs/unit-based-Voicebox/1_reconstructed_1.wav" type="audio/wav"></audio></td>
+                                        <td><audio controls style="width: 200px;"><source src="wavs/unit-based-Voicebox/1_reconstructed_2.wav" type="audio/wav"></audio></td>
+                                        <td><audio controls style="width: 200px;"><source src="wavs/unit-based-Voicebox/1_reconstructed_3.wav" type="audio/wav"></audio></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Sample 2 -->
+            <div class="column is-full">
+                <div class="card">
+                    <header class="card-header">
+                        <p class="card-header-title">Sample 2</p>
+                    </header>
+                    <div class="card-content">
+                        <div class="model-response-comparison" style="overflow-x: auto; white-space: nowrap;">
+                            <table class="table is-fullwidth">
+                                <thead>
+                                    <tr>
+                                        <th>Ground Truth</th>
+                                        <th>Reconstructed Audio 1</th>
+                                        <th>Reconstructed Audio 2</th>
+                                        <th>Reconstructed Audio 3</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><audio controls style="width: 200px;"><source src="wavs/unit-based-Voicebox/2_ground_truth.wav" type="audio/wav"></audio></td>
+                                        <td><audio controls style="width: 200px;"><source src="wavs/unit-based-Voicebox/2_reconstructed_1.wav" type="audio/wav"></audio></td>
+                                        <td><audio controls style="width: 200px;"><source src="wavs/unit-based-Voicebox/2_reconstructed_2.wav" type="audio/wav"></audio></td>
+                                        <td><audio controls style="width: 200px;"><source src="wavs/unit-based-Voicebox/2_reconstructed_3.wav" type="audio/wav"></audio></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Sample 3 -->
+            <div class="column is-full">
+                <div class="card">
+                    <header class="card-header">
+                        <p class="card-header-title">Sample 3</p>
+                    </header>
+                    <div class="card-content">
+                        <div class="model-response-comparison" style="overflow-x: auto; white-space: nowrap;">
+                            <table class="table is-fullwidth">
+                                <thead>
+                                    <tr>
+                                        <th>Ground Truth</th>
+                                        <th>Reconstructed Audio 1</th>
+                                        <th>Reconstructed Audio 2</th>
+                                        <th>Reconstructed Audio 3</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><audio controls style="width: 200px;"><source src="wavs/unit-based-Voicebox/3_ground_truth.wav" type="audio/wav"></audio></td>
+                                        <td><audio controls style="width: 200px;"><source src="wavs/unit-based-Voicebox/3_reconstructed_1.wav" type="audio/wav"></audio></td>
+                                        <td><audio controls style="width: 200px;"><source src="wavs/unit-based-Voicebox/3_reconstructed_2.wav" type="audio/wav"></audio></td>
+                                        <td><audio controls style="width: 200px;"><source src="wavs/unit-based-Voicebox/3_reconstructed_3.wav" type="audio/wav"></audio></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+        <h2 class="title">BibTeX</h2>
+        <pre><code>@inproceedings{
+	kim2024paralinguisticsaware,
+	title={Paralinguistics-Aware Speech-Empowered Large Language Models for Natural Conversation},
+	author={Heeseung Kim and Soonshin Seo and Kyeongseok Jeong and Ohsung Kwon and Soyoon Kim and Jungwhan Kim and Jaehong Lee and Eunwoo Song and Myungwoo Oh and Jung-Woo Ha and Sungroh Yoon and Kang Min Yoo},
+	booktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems},
+	year={2024},
+	url={https://openreview.net/forum?id=NjewXJUDYq}
+}
+        </code></pre>
+    </div>
+</section>
+    
+<footer class="footer">
+    <div class="container">
+        <div class="content has-text-centered">
+            <a href="https://github.com/gmltmd789" class="icon-link">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+        <p class="has-text-centered">            
+	    The template for this website was sourced from <a href="https://github.com/nerfies/nerfies.github.io" target="_blank">https://github.com/nerfies/nerfies.github.io</a>.
+	</p>
+    </div>
+</footer>
+
+</body>
+</html>
